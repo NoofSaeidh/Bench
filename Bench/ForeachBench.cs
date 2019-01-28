@@ -9,7 +9,7 @@ using BenchmarkDotNet.Loggers;
 
 namespace Bench
 {
-    [ShortRunJob]
+    [ClrJob, CoreJob]
     public class ForeachBench
     {
         private List<int> _list;
