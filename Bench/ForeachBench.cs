@@ -5,11 +5,13 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Loggers;
 
 namespace Bench
 {
-    [ClrJob, CoreJob]
+    [DryCoreJob, DryClrJob(Platform.X86)]
+    [DisassemblyDiagnoser]
     public class ForeachBench
     {
         private List<int> _list;
